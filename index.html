@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy for Birth</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 自南而北,自北向南</span><br />
+				<span class="space"/><span class="comments">* 2017.8.12</span><br />
+					<span class="space"/><span class="comments">* 遇见了一个洒脱自在的小姑娘</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"JinLiAn"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"LiuTianJiao"</span>);<br />
+				<span class="comments">// Hit it off </span><br />
+				初次见面的气场莫名其妙的和气的一塌糊涂，互怼得莫名欢乐。<br/>嗯，大家都认为我们认识了很久了<br />
+				<span class="comments">// Get together</span><br />
+				情人节四条瑟瑟发抖的四条狗,无数的意外最后依旧凑在一起,相互取暖<br />
+				<span class="comments">// Best friend.</span><br />
+				最活跃的是你，最热情的你，最直白的是你，希望最后的你是一个活得自在、洒脱、勇敢、幸福的你<br />
+				<span class="comments">// Fover Young.</span><br />
+				要坚持喜欢的和追求的嗷，不要放弃你的期待，不要放弃你的洒脱;<br />
+				<span class="comments">// Lucky.</span><br />
+				<span class="comments">在有机会的时候，做自己最想做的事情，足够善良的你一定足够幸运.</span><br />
+				<span style="color:red">I believe</span><br />
+				<span style="color:red">你如今的气质里，藏着你走过的路，读过的书，和爱过的人</span><br />
+				<span style="color:red">生活不会总是一帆风顺，但总会充满惊喜.</span><br /> 
+				<span class="comments">//自五湖来，归四海去;</span><br />
+				终有一天我们将各自远去，但不管身处何方，都希望你闪亮如星<br />
+				<span class="comments">// In the end.</span><br />
+				祝你有足够的心气，去找到余生你最爱的一部电影，最爱的一首歌，足够有趣的事;<br />
+				和最爱的人;<br />
+			</div>
+			<div id="Friend">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						&nbsp&nbsp&nbsp&nbsp&nbsp你已成功在地球生存：
+						<div id="elapseClock"></div>
+					</div>
+					<div id="ForU">
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHappy for you birth ,TianJiao<br/>
+						<div class="signature">- lajin</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.liutianjiao.com">liutianjiao</a> project.<br />
+			Copyright © 2017 <a href='http://liutianjiao.come'>liiutianjiao</a> 2017-2020
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#Friend").width() / 2;
+		var offsetY = $("#Friend").height() / 2 - 55; 
+		var together = new Date();
+	 
+		together.setFullYear(2017, 11, 15);
+		together.setHours(21);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
